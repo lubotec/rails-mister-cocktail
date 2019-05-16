@@ -1,22 +1,18 @@
 <div class="container">
-  <div class="row">
-    <% @cocktails.each do |cocktail| %>
-      <div class="card-show">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="..." class="card-img" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title"><%= cocktail.name %></h5>
-              <% cocktail.doses.each do |dose| %>
+
+  <h2>Our menu</h2>
+
+  <div class="row d-flex justify-content-between">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-4 mt-4">
+          <div class="card-show">
+            <h5> <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-show-title"%></h5>
+            <% cocktail.doses.each do |dose| %>
               <p class="card-text"><%= dose.description %> <%= dose.ingredient.name %></p>
-              <% end %>
-            </div>
+            <% end %>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 
 </div>

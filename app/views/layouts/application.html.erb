@@ -13,11 +13,13 @@
 
   <body>
     <div class="navbar">
-      <h3>Cocktailer</h3>
+      <h3><%= link_to "Cocktailer", cocktails_path, style: "text-decoration: none; color: #F60074"  %></h3>
+      <h3><%= link_to "Our menu", cocktails_path, class: "btn btn-outline-dark" %> </h3>
       <h3><%= link_to "Add a cock", new_cocktail_path, class: "btn btn-outline-dark" %> </h3>
 
     </div>
-    <%= yield %>
+
+      <%= yield %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
