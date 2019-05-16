@@ -33,10 +33,6 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 
-gem 'open-uri'
-
-gem 'json'
-
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
