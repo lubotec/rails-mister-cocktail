@@ -1,0 +1,5 @@
+<%= @cocktail.name %>
+<%= @cocktail.ingredients %>
+<%= @cocktail.doses %>
+
+<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"  %>
