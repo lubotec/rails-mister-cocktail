@@ -19,11 +19,14 @@ $orange: #FA672B;
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
+  right: 45px;
   width: 100%;
   z-index: 2;
   background: black;
   opacity: 1;
+  border-radius: 10px;
+  width: 320px;
+  height: 240px;
   &:hover {
     opacity: 0.1;
   }
@@ -38,6 +41,11 @@ $orange: #FA672B;
     color: $orange;
     text-decoration: none;
   }
+}
+
+.card-text {
+  position: relative;
+  top: 40px;
 }
 
 .card-category {

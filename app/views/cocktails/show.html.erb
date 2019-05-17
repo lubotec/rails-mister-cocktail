@@ -1,13 +1,20 @@
 <div class="container">
 
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-  <%= @cocktail.name %>
-</div>
+  <% if @cocktail.photo.url %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+  <% else %>
+    <div class="card-category" style="color: #FA672B">
+  <% end %>
+    <%= @cocktail.name %>
+  </div>
 
-<% @cocktail.doses.each do |dose| %>
-  <p class="card-text"><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "", dose_path(dose), method: :delete , class: "fas fa-trash-alt"  %></p>
-<% end %>
+  <h3 class="mb-3">Ingredients</h3>
+  <% @cocktail.doses.each do |dose| %>
+    <p class="card-text ml-4"><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "", dose_path(dose), method: :delete , class: "fas fa-trash-alt"  %></p>
+  <% end %>
 
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-dark"  %>
+  <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-dark mt-5"  %>
+  <br>
+  <%= link_to "Back to cocktails", cocktails_path, class: "btn btn-dark mt-5" %>
 
 </div>
