@@ -1,7 +1,11 @@
 <div class="container">
-<h2> <%= @cocktail.name %></h2>
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+  <%= @cocktail.name %>
+</div>
+
 <% @cocktail.doses.each do |dose| %>
-  <p class="card-text"><%= dose.description %> <%= dose.ingredient.name %><%= link_to "Delete", dose_path(dose), method: :delete , class: "btn btn-dark"  %></p>
+  <p class="card-text"><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "", dose_path(dose), method: :delete , class: "fas fa-trash-alt"  %></p>
 <% end %>
 
 <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-dark"  %>

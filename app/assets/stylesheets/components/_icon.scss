@@ -1,0 +1,8 @@
+$orange: #FA672B;
+
+.fa-trash-alt {
+  color: #343a40;
+  &:hover {
+    color: $orange;
+  }
+}
