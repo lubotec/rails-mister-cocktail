@@ -8,20 +8,16 @@
           <% if cocktail.photo.url %>
             <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
            url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-              <h5> <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-show-title"%></h5>
+          <% else %>
+            <div class="card-show">
+          <% end %>
+              <h5 class="card-show-title"> <%= cocktail.name %> </h5>
               <% cocktail.doses.each do |dose| %>
                 <p class="card-text"><%= dose.description %> <%= dose.ingredient.name %></p>
               <% end %>
-            </div>
-            <% else %>
-             <div class="card-show">
-              <h5> <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-show-title"%></h5>
-              <% cocktail.doses.each do |dose| %>
-                <p class="card-text"><%= dose.description %> <%= dose.ingredient.name %></p>
-              <% end %>
+              <%= link_to "", cocktail_path(cocktail), class: "card-link"%>
             </div>
 
-          <% end %>
         </div>
       <% end %>
   </div>
