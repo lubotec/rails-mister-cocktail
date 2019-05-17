@@ -3,23 +3,21 @@
   <h2>Our menu</h2>
 
   <div class="row d-flex justify-content-between">
-      <% @cocktails.each do |cocktail| %>
-        <div class="col-4 mt-4">
-          <% if cocktail.photo.url %>
-            <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-           url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-          <% else %>
-            <div class="card-show">
-          <% end %>
-              <h5 class="card-show-title"> <%= cocktail.name %> </h5>
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-4 mt-4">
+        <% if cocktail.photo.url %>
+          <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+        <% else %>
+          <div class="card-show">
+        <% end %>
+            <h5 class="card-show-title"> <%= cocktail.name %> </h5>
               <% cocktail.doses.each do |dose| %>
                 <p class="card-text"><%= dose.description %> <%= dose.ingredient.name %></p>
               <% end %>
-              <%= link_to "", cocktail_path(cocktail), class: "card-link"%>
-            </div>
-
-        </div>
-      <% end %>
+            <%= link_to "", cocktail_path(cocktail), class: "card-link"%>
+          </div>
+      </div>
+    <% end %>
   </div>
 
 </div>

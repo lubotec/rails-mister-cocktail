@@ -32,6 +32,8 @@ $orange: #FA672B;
 .card-show-title {
   color: white;
   text-decoration: none;
+  z-index: 3;
+  position: absolute;
   &:hover {
     color: $orange;
     text-decoration: none;
